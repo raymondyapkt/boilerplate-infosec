@@ -57,7 +57,9 @@ app.get("/app-info", function (req, res) {
 app.get("/package.json", function (req, res, next) {
   fs.readFile(__dirname + "/package.json", function (err, data) {
     if (err) return next(err);
+    //res.type("txt").send(data.toString());
     res.type("txt").send(data.toString());
+
   });
 });
 
